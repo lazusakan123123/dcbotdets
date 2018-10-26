@@ -1,31 +1,25 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
-const ayarlar = require('../ayarlar.json');
+const Discord = require("discord.js");
 
-exports.run = (client, message) => {
-  if (message.channel.type !== 'dm') {
+module.exports.run = async (bot, message, args) => {
+if (message.channel.type !== 'dm') {
     const ozelmesajkontrol = new Discord.RichEmbed()
     .setColor(0x00AE86)
     .setTimestamp()
     .setAuthor(message.author.username, message.author.avatarURL)
-    .setDescription('Özel Mesajlarına Bilgi Mesajımı Attım! :postbox: ');
+    .setDescription('Özel mesajlarına bilgi mesajımı gönderdim! :postbox: ');
     message.channel.sendEmbed(ozelmesajkontrol) }
 	const pingozel = new Discord.RichEmbed()
     .setColor(0x00AE86)
     .setAuthor(message.author.username, message.author.avatarURL)
-    .setDescription('**17.03.2018 Tarihinde Sénateur#5054 Tarafından Yapılmıştır. Diğer Bütün Bilgiler İçin h!yardım**');
-    return message.author.sendEmbed(pingozel)
+	.addField("**❯ Yapımcı**", "<@mr.kaan#5297>", )
+    .addField("**❯ Sürüm**", " v0.0.1 ", )
+    .addField("**❯ Yapım Tarihi**", " 02 Temmuz 2018 ", )
+	.addField("**❯ Bot Davet**", " [Davet Et](https://discordapp.com/oauth2/authorize?client_id=488771310470823947&scope=bot&permissions=2146958847)", )
+    .addField("**❯ Destek sunucusu**", " [Sunucumuza Katıl](https://discord.gg/8s5DXX) ", )
+	.setThumbnail("https://forum.gamer.com.tr/attachments/bilgi-png.55209/");
+    return message.author.send(pingozel)
 };
 
-exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: ['bot bilgi', 'botbilgi', 'bb', 'botb', 'bbot', 'hakkında', 'bot hakkında', 'bothakkında'],
-  permLevel: 0
-};
-
-exports.help = {
-  name: 'bilgi',
-  description: 'Bot ile ilgili bilgi verir.',
-  usage: 'bilgi'
-};
+module.exports.help = {
+  name: "bilgi"
+}
