@@ -11,7 +11,7 @@ exports.run = (client, message, args) => {
     return message.author.sendEmbed(ozelmesajuyari); }
 
   let mesaj = args.slice(0).join(' ');
-if (mesaj.length < 1) return message.channel.send('Birşey Yazmalısınız');
+if (mesaj.length < 1) return message.channel.send('Birşey Yazmalısınız') 
 
   message.delete();
 
@@ -37,7 +37,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'duyur',
+  name: 'duyuru',
   description: 'İstediğiniz şeyi bota duyurtur.',
   usage: 'duyuru [duyurmak istediğiniz şey]'
 };
