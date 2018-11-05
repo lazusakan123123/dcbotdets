@@ -47,4 +47,4 @@ client.on('message', msg => {
   }
 });
 
-client.login(procces.evn.TOKEN);
+client.login(process.evn.TOKEN);
